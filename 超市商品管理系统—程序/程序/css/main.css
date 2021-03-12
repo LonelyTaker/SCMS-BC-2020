@@ -1,0 +1,21 @@
+#head{
+  height: 89px;
+  background-color: #E6E6E6;
+}
+#title{
+  color:#1684A5;
+  position: absolute;
+  top: 7px;
+  left: 20px;
+}
+#menu{
+  float: left;
+  background-color:#1684A5;
+  height: 880px;
+  padding: 0px;
+}
+#main{
+  float: left;
+  height: 880px;
+  padding: 0px;
+}

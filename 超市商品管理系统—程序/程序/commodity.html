@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品管理</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 30px;left: 30px;">
+          <div class="form-group">
+            <p class="form-control-static">查询条件：</p>
+          </div>
+          <select id="search_way" class="form-control">
+          <option value="Gname">商品名称</option>
+          <option value="Gid">编号</option>
+          </select>
+          <div class="form-group">
+            <input id="search_text" type="text" class="form-control">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 85px;height:500px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">商品编号</th>
+              <th style="width: 15%;">商品名称</th>
+              <th style="width: 15%;">类别</th>
+              <th style="width: 15%;">售价</th>
+              <th style="width: 15%;">库存</th>
+              <th style="width: 15%;">兑换所需积分</th>
+              <th style="width: 15%;">所在仓库</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+        <!-- 商品编辑表单 -->
+        <form class="form-inline" style="position: absolute;top: 600px;left: 20px;">
+          <div class="form-group">
+            <label>商品编号：</label>
+            <input id="edit_Gid" type="text" class="form-control" placeholder="请输入商品编号" style="width: 130px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;商品名称：</label>
+            <input id="edit_Gname" type="text" class="form-control" placeholder="请输入商品名称">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;类型：</label>
+            <select id="edit_Gtype" class="form-control">
+              <option value="日用品">日用品</option>
+              <option value="食品">食品</option>
+              <option value="衣物">衣物</option>
+              <option value="工具">工具</option>
+              <option value="杂货">杂货</option>
+              <option value="果蔬">果蔬</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>&nbsp;价格：</label>
+            <div class="input-group">
+            <div class="input-group-addon">¥</div>
+            <input id="edit_Gprice" type="text" class="form-control" placeholder="请输入价格" style="width: 100px;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>&nbsp;兑换所需积分：</label>
+            <input id="edit_GneedPoints" type="text" class="form-control" style="width: 100px;">
+          </div>
+          <label>&nbsp;存放仓库：</label>
+          <select id="edit_Wid" class="form-control">
+
+          </select>
+        </form>
+        <div style="position: absolute;top: 650px;left: 20px;">
+          <button id="add" type="button" class="btn btn-info" style="width: 100px;">新增</button>
+          <button id="delete" type="button" class="btn btn-info" style="width: 100px;">下架</button>
+          <button id="update" type="button" class="btn btn-info" style="width: 100px;">更新</button>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/commodity.js"></script>
+  </body>
+</html>

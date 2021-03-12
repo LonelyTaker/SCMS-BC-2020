@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>退货记录</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <ul class="nav nav-tabs" >
+          <li role="presentation"><a href="return.html">待处理</a></li>
+          <li role="presentation" class="active"><a href="#">已处理</a></li>
+        </ul>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 60px;left: 20px;">
+          <div class="form-group">
+            <p class="form-control-static">&nbsp;日期：</p>
+            <input id="search_date" type="date" class="form-control">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 105px;height:500px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">退货单号</th>
+              <th style="width: 10%;">顾客编号</th>
+              <th style="width: 10%;">购买订单号</th>
+              <th style="width: 15%;">商品名</th>
+              <th style="width: 10%;">数量</th>
+              <th style="width: 10%;">退款</th>
+              <th style="width: 15%;">原因</th>
+              <th style="width: 10%;">日期</th>
+              <th style="width: 10%;">状态</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+        <!-- 商品编辑表单 -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/returnProcessed.js"></script>
+  </body>
+</html>

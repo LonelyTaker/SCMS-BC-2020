@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>供应商信息</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <ul class="nav nav-tabs" >
+          <li role="presentation" class="active"><a href="#">供应商</a></li>
+          <li role="presentation"><a href="supplyOrder.html">供应订单</a></li>
+        </ul>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 60px;left: 20px;">
+          <div class="form-group">
+            <p class="form-control-static">查询条件：</p>
+          </div>
+          <select id="search_way" class="form-control">
+          <option value="Sname">供应商名称</option>
+          <option value="Sid">编号</option>
+          </select>
+          <div class="form-group">
+            <input id="search_text" type="text" class="form-control">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 105px;height:500px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">供应商编号</th>
+              <th style="width: 25%;">供应商名称</th>
+              <th style="width: 15%;">联系人名字</th>
+              <th style="width: 20%;">联系人电话</th>
+              <th style="width: 30%;">地址</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+        <!-- 商品编辑表单 -->
+        <form class="form-inline" style="position: absolute;top: 620px;left: 20px;">
+          <div class="form-group">
+            <label>供应商编号：</label>
+            <input id="edit_Sid" type="text" class="form-control"  style="width: 80px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;供应商名称：</label>
+            <input id="edit_Sname" type="text" class="form-control"  style="width: 150px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;联系人名字：</label>
+            <input id="edit_SconName" type="text" class="form-control"  style="width: 100px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;联系人电话：</label>
+            <input id="edit_SconPhone" type="text" class="form-control"  style="width: 150px;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>&nbsp;地址：</label>
+            <input id="edit_Sadd" type="text" class="form-control" style="width: 200px;">
+          </div>
+        </form>
+        <div style="position: absolute;top: 670px;left: 20px;">
+          <button id="add" type="button" class="btn btn-info" style="width: 100px;">新增</button>
+          <button id="delete" type="button" class="btn btn-info" style="width: 100px;">删除</button>
+          <button id="update" type="button" class="btn btn-info" style="width: 100px;">更新</button>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/supply.js"></script>
+  </body>
+</html>

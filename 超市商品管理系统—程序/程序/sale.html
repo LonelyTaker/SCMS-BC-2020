@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>营业情况</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <ul class="nav nav-tabs" >
+          <li role="presentation"><a href="purchase.html">销售记录</a></li>
+          <li role="presentation" class="active"><a href="#">营业情况</a></li>
+        </ul>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 60px;left: 20px;">
+          <div class="form-group">
+            <p class="form-control-static">查询条件：</p>
+          </div>
+          <select id="search_way" class="form-control">
+          <option value="ThreeDays">近三天</option>
+          <option value="Week">近一周</option>
+          <option value="Month">近一个月</option>
+          <option value="date">具体日期</option>
+          </select>
+          <div class="form-group">
+            <p class="form-control-static">&nbsp;日期：</p>
+            <input id="search_date" type="date" class="form-control">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 105px;height:320px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">日期</th>
+              <th style="width: 30%;">营业额</th>
+              <th style="width: 30%;">花费</th>
+              <th style="width: 30%;">利润</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+      <div id="echart" style="height:400px;position: relative;top: 410px;"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/sale.js"></script>
+  </body>
+</html>

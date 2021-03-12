@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>仓库信息</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 30px;left: 30px;">
+          <div class="form-group">
+            <p class="form-control-static">仓库编号：</p>
+          </div>
+          <div class="form-group">
+            <input id="search_text" type="text" class="form-control" style="width: 100px;">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 85px;height:500px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 25%;">仓库编号</th>
+              <th style="width: 25%;">仓库地址</th>
+              <th style="width: 25%;">负责人名字</th>
+              <th style="width: 25%;">负责人电话</th>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+        <!-- 商品编辑表单 -->
+        <form class="form-inline" style="position: absolute;top: 600px;left: 20px;">
+          <div class="form-group">
+            <label>仓库编号：</label>
+            <input id="edit_Wid" type="text" class="form-control" style="width: 100px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;仓库地址：</label>
+            <input id="edit_Waddress" type="text" class="form-control" style="width: 200px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;负责人名字：</label>
+            <input id="edit_WkeeperName" type="text" class="form-control" style="width: 130px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;负责人电话：</label>
+            <input id="edit_WkeeperPhone" type="text" class="form-control"style="width: 150px;">
+          </div>
+        </form>
+        <div style="position: absolute;top: 650px;left: 20px;">
+          <button id="add" type="button" class="btn btn-info" style="width: 100px;">新增</button>
+          <button id="delete" type="button" class="btn btn-info" style="width: 100px;">删除</button>
+          <button id="update" type="button" class="btn btn-info" style="width: 100px;">更新</button>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/warehouse.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顾客信息</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+        <!-- 查询表单 -->
+        <form class="form-inline" style="position: absolute;top: 30px;left: 30px;">
+          <div class="form-group">
+            <p class="form-control-static">查询条件：</p>
+          </div>
+          <select id="search_way" class="form-control">
+          <option value="Cid">顾客编号</option>
+          <option value="Cname">顾客姓名</option>
+          <option value="Cphone">顾客电话</option>
+          </select>
+          <div class="form-group">
+            <input id="search_text" type="text" class="form-control">
+          </div>
+          <button id="search" type="button" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <button id="search_cancel" type="button" class="btn btn-default">取消</button>
+        </form>
+        <!-- 查询表格 -->
+        <div class="col-md-12" style="overflow: scroll;position: absolute;top: 85px;height:500px">
+        <table class="table table-hover table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">顾客编号</th>
+              <th style="width: 15%;">顾客姓名</th>
+              <th style="width: 15%;">顾客电话</th>
+              <th style="width: 40%;">地址</th>
+              <th style="width: 10%;">会员积分</th>
+              <th style="width: 10%;">会员卡余额</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+        <!-- 商品编辑表单 -->
+        <form class="form-inline" style="position: absolute;top: 600px;left: 20px;">
+          <div class="form-group">
+            <label>顾客编号：</label>
+            <input id="edit_Cid" type="text" class="form-control" placeholder="请输入顾客编号" style="width: 130px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;顾客姓名：</label>
+            <input id="edit_Cname" type="text" class="form-control" placeholder="请输入顾客姓名" style="width: 130px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;顾客电话：</label>
+            <input id="edit_Cphone" type="text" class="form-control" placeholder="请输入顾客电话" style="width: 130px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;地址：</label>
+            <input id="edit_Cadd" type="text" class="form-control" placeholder="请输入地址" style="width: 200px;">
+          </div>
+          <div class="form-group">
+            <label>&nbsp;会员卡充值：</label>
+            <div class="input-group">
+            <div class="input-group-addon">¥</div>
+            <input id="edit_VIPbalance" type="text" class="form-control" style="width: 80px;">
+            </div>
+          </div>
+        </form>
+        <div style="position: absolute;top: 650px;left: 20px;">
+          <button id="add" type="button" class="btn btn-info" style="width: 100px;">新增</button>
+          <button id="delete" type="button" class="btn btn-info" style="width: 100px;">删除</button>
+          <button id="update" type="button" class="btn btn-info" style="width: 100px;">更新</button>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="js/customer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>个人资料</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="form-horizontal" style="position: relative;top: 70px;">
+      <div class="form-group">
+        <label class="col-sm-5 control-label">用户名:</label>
+        <div id="username" class="col-sm-2">
+          <p class="form-control-static">测试数据</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">修改密码:</label>
+        <div class="col-sm-2">
+          <input id="password" type="password" class="form-control" placeholder="请输入密码">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">确定密码:</label>
+        <div class="col-sm-2">
+          <input id="password_again" type="password" class="form-control" placeholder="请再次输入密码">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">姓名:</label>
+        <div id="Mname" class="col-sm-2">
+          <p class="form-control-static">测试数据</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">性别:</label>
+        <div id="Msex" class="col-sm-2">
+          <p class="form-control-static">测试数据</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">出生日期:</label>
+        <div id="Mbirthday" class="col-sm-2">
+          <p class="form-control-static">测试数据</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">身份证信息:</label>
+        <div id="MidCard" class="col-sm-2">
+          <p class="form-control-static">测试数据</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">手机号码:</label>
+        <div class="col-sm-2">
+          <input id="Mphone" type="text" class="form-control" placeholder="请输入手机号">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-5 control-label">邮箱:</label>
+        <div class="col-sm-2">
+          <input id="Memail" type="text" class="form-control" placeholder="请输入邮箱">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-10">
+          <button id="update" type="button" class="btn btn-info">保存修改</button>
+        </div>
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+      $.ajax({
+          url: 'php/user.php',
+          type: 'POST',
+          contentType: false,
+          processData: false,
+          success: function(json){
+          var data=JSON.parse(json);
+          $("#username").empty();
+          $("#username").append("<p class='form-control-static'>"+data.MuserName+"</p>");
+          $("#Mname").empty();
+          $("#Mname").append("<p class='form-control-static'>"+data.Mname+"</p>");
+          $("#Msex").empty();
+          $("#Msex").append("<p class='form-control-static'>"+data.Msex+"</p>");
+          $("#Mbirthday").empty();
+          $("#Mbirthday").append("<p class='form-control-static'>"+data.Mbirthday+"</p>");
+          $("#MidCard").empty();
+          $("#MidCard").append("<p class='form-control-static'>"+data.MidCard+"</p>");
+          $("#Mphone").val(data.Mphone);
+          $("#Memail").val(data.Memail);
+        }
+      });
+      $("#update").click(function(){
+        var update_data=new FormData();
+        update_data.append('password',$("#password").val());
+        update_data.append('password_again',$("#password_again").val());
+        update_data.append('Mphone',$("#Mphone").val());
+        update_data.append('Memail',$("#Memail").val());
+        $.ajax({
+          url: 'php/user_update.php',
+          type: 'POST',
+          data:update_data,
+          contentType: false,
+          processData: false,
+          success: function(json){
+            var data=JSON.parse(json);
+            if (data.feedback=='pw_wrong') {
+              alert("请输入6-18位密码");
+            }
+            else if (data.feedback=='pwa_wrong') {
+              alert("两次输入的密码不一致");
+            }
+            else if(data.feedback=="phone_wrong") {
+              alert('手机号码不正确');
+            }
+            else if(data.feedback=="success"){
+              alert("修改成功");
+              $("#password").val("");
+              $("#password_again").val("");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

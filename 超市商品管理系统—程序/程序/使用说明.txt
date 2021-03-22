@@ -1,1 +1,2 @@
+php中封装了数据操作，connectvars.php为配置文件
 在服务器中运行Sign.html即可
